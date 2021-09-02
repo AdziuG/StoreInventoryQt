@@ -21,6 +21,8 @@ public:
     void removeItem();
     void handleItemClick();
     void handleMenuItemEdit();
+    void handleSaveItems();
+    void handleLoadItems();
 
 private:
     Ui::MainWindow *ui;

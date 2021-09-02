@@ -17,8 +17,8 @@
    <widget class="QListWidget" name="listProducts">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <width>321</width>
       <height>381</height>
      </rect>
@@ -43,7 +43,7 @@
    <widget class="QPushButton" name="btnRemoveProduct">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>410</y>
       <width>281</width>
       <height>28</height>
@@ -53,7 +53,7 @@
      <string>Remove Selected Product</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -82,7 +82,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>470</x>
