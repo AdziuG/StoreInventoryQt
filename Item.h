@@ -12,7 +12,7 @@ class Item
         void setQuantity(int inputQuantity);
         int getQuantity() const;
         void setImageFilePath(QString insertImageFilePath);
-        const QString getImageFilePath() const;
+        QString getImageFilePath() const;
 
 private:
         QString name;

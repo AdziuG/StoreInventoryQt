@@ -55,7 +55,7 @@
     <string>Confirm Edit</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -73,7 +73,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QSpinBox" name="spinBox">
+     <widget class="QSpinBox" name="spinQuantity">
       <property name="minimum">
        <number>1</number>
       </property>
@@ -84,7 +84,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>

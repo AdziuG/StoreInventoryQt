@@ -2,6 +2,8 @@
 #include "mainwindow.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "updateitemdialog.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->menuNewProduct, &QAction::triggered, this, &MainWindow::handleMenuItemNew);
     connect(ui->btnRemoveProduct, &QPushButton::clicked, this, &MainWindow::removeItem);
+    connect(ui->listProducts, &QListWidget::itemClicked, this, &MainWindow::handleItemClick);
+    connect(ui->menuEditSelectedProduct, &QAction::triggered, this, &MainWindow::handleMenuItemEdit);
 }
 
 MainWindow::~MainWindow()
@@ -50,3 +54,46 @@ void MainWindow::removeItem()
     }
 }
 
+void MainWindow::handleItemClick()
+{
+    int index = ui->listProducts->currentRow();
+    if(index != -1)
+    {
+        Item* currentItem = productList.at(index);
+
+        if(currentItem != nullptr)
+        {
+            ui->labelProductName->setText(currentItem->getName());
+            ui->labelQuantity->setText(QString::number(currentItem->getQuantity()));
+            QPixmap pixmap(currentItem->getImageFilePath());
+            ui->labelItemImage->setPixmap(pixmap);
+            ui->labelItemImage->setScaledContents(true);
+        }
+
+    }
+
+}
+
+void MainWindow::handleMenuItemEdit()
+{
+    int index = ui->listProducts->currentRow();
+    if(index != -1)
+    {
+        Item* currentItem = productList.at(index);
+
+        if(currentItem != nullptr)
+        {
+            UpdateItemDialog updateItemDialog(currentItem, nullptr);
+            updateItemDialog.exec();
+
+            // make sure UI is updated
+            ui->labelProductName->setText(currentItem->getName());
+            ui->labelQuantity->setText(QString::number(currentItem->getQuantity()));
+            QPixmap pixmap(currentItem->getImageFilePath());
+            ui->labelItemImage->setPixmap(pixmap);
+            ui->labelItemImage->setScaledContents(true);
+
+        }
+    }
+
+}

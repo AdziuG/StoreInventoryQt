@@ -5,7 +5,7 @@ Item::Item(QString name, int quantity, QString imageFilePath)
 {
     setName(name);
     setQuantity(quantity);
-    imageFilePath = "none.png";
+    setImageFilePath(imageFilePath);
 }
 
 void Item::setName(QString inputName)
@@ -33,7 +33,7 @@ void Item::setImageFilePath(QString insertImageFilePath="none.png")
     this->imageFilePath = insertImageFilePath;
 }
 
-const QString Item::getImageFilePath() const
+QString Item::getImageFilePath() const
 {
     return imageFilePath;
 }

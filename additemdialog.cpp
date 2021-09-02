@@ -54,7 +54,7 @@ void AddItemDialog::loadItemImage()
 {
     QString filename;
 
-    filename = QFileDialog::getOpenFileName(this, "Open Image", "./", "Image Files (*.png *.jpg");
+    filename = QFileDialog::getOpenFileName(this, "Open Image", "./", "Image Files (*.jpg, *.png)");
 
     if(filename != "")
     {

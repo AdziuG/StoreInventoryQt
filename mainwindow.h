@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QListWidgetItem>
 #include <QMainWindow>
 #include "Item.h"
 
@@ -18,6 +19,8 @@ public:
 
     void handleMenuItemNew();
     void removeItem();
+    void handleItemClick();
+    void handleMenuItemEdit();
 
 private:
     Ui::MainWindow *ui;
