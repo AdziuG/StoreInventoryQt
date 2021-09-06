@@ -30,3 +30,12 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    dark_orange/style.qrc
+
+DISTFILES += \
+    dark_orange/img/checkbox.png \
+    dark_orange/img/down_arrow.png \
+    dark_orange/img/handle.png \
+    dark_orange/style.qss
